@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
+@property (nonatomic, strong) UIPopoverController *popOver;
+- (IBAction)Camera:(id)sender ;
+- (IBAction)CameraFBack:(id)sender ;
+- (IBAction)Album:(id)sender ;
+- (IBAction)info:(id)sender ;
+@property (weak, nonatomic) IBOutlet UIButton *album;
 @end

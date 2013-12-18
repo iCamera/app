@@ -22,6 +22,9 @@
 		BC47D09218617A02000E6232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47D07118617A02000E6232 /* UIKit.framework */; };
 		BC47D09A18617A02000E6232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC47D09818617A02000E6232 /* InfoPlist.strings */; };
 		BC47D09C18617A02000E6232 /* funyCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47D09B18617A02000E6232 /* funyCameraTests.m */; };
+		BC47D0BF1861A5B9000E6232 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC47D0BE1861A5B9000E6232 /* bg.jpg */; };
+		BC47D0C11861A913000E6232 /* bg_ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC47D0C01861A913000E6232 /* bg_ipad.jpg */; };
+		BC47D0C41861AEA1000E6232 /* CamAndPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47D0C31861AEA1000E6232 /* CamAndPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,10 @@
 		BC47D09718617A02000E6232 /* funyCameraTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "funyCameraTests-Info.plist"; sourceTree = "<group>"; };
 		BC47D09918617A02000E6232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BC47D09B18617A02000E6232 /* funyCameraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = funyCameraTests.m; sourceTree = "<group>"; };
+		BC47D0BE1861A5B9000E6232 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		BC47D0C01861A913000E6232 /* bg_ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_ipad.jpg; sourceTree = "<group>"; };
+		BC47D0C21861AEA1000E6232 /* CamAndPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamAndPhoto.h; sourceTree = "<group>"; };
+		BC47D0C31861AEA1000E6232 /* CamAndPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamAndPhoto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +121,7 @@
 		BC47D07318617A02000E6232 /* funyCamera */ = {
 			isa = PBXGroup;
 			children = (
+				BC47D0BD1861A5A9000E6232 /* image */,
 				BC47D07C18617A02000E6232 /* AppDelegate.h */,
 				BC47D07D18617A02000E6232 /* AppDelegate.m */,
 				BC47D07F18617A02000E6232 /* Main_iPhone.storyboard */,
@@ -122,6 +130,8 @@
 				BC47D08618617A02000E6232 /* ViewController.m */,
 				BC47D08818617A02000E6232 /* Images.xcassets */,
 				BC47D07418617A02000E6232 /* Supporting Files */,
+				BC47D0C21861AEA1000E6232 /* CamAndPhoto.h */,
+				BC47D0C31861AEA1000E6232 /* CamAndPhoto.m */,
 			);
 			path = funyCamera;
 			sourceTree = "<group>";
@@ -153,6 +163,15 @@
 				BC47D09818617A02000E6232 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC47D0BD1861A5A9000E6232 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				BC47D0C01861A913000E6232 /* bg_ipad.jpg */,
+				BC47D0BE1861A5B9000E6232 /* bg.jpg */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC47D0C11861A913000E6232 /* bg_ipad.jpg in Resources */,
+				BC47D0BF1861A5B9000E6232 /* bg.jpg in Resources */,
 				BC47D08418617A02000E6232 /* Main_iPad.storyboard in Resources */,
 				BC47D08918617A02000E6232 /* Images.xcassets in Resources */,
 				BC47D08118617A02000E6232 /* Main_iPhone.storyboard in Resources */,
@@ -255,6 +276,7 @@
 			files = (
 				BC47D08718617A02000E6232 /* ViewController.m in Sources */,
 				BC47D07E18617A02000E6232 /* AppDelegate.m in Sources */,
+				BC47D0C41861AEA1000E6232 /* CamAndPhoto.m in Sources */,
 				BC47D07A18617A02000E6232 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +496,7 @@
 				BC47D0A118617A02000E6232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC47D0A218617A02000E6232 /* Build configuration list for PBXNativeTarget "funyCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +505,7 @@
 				BC47D0A418617A02000E6232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CamAndPhoto : UIViewController
+@interface CamAndPhoto : UIViewController{
+    UIImage *image1;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
+@property (nonatomic) UIImage *image1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageFrame;
+- (IBAction)setting:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewbutton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
+- (IBAction)tollimage:(id)sender;
 
 @end

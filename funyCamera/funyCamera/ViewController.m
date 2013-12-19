@@ -53,29 +53,32 @@
     } else {
         [self presentViewController:picker animated:YES completion:NULL];
     }
-
 }
+
 - (IBAction)info:(id)sender {
-}
-- (IBAction)w:(id)sender {
+
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"CameraAlbum"]) {
+        // Get destination view
+        CamAndPhoto *vc = [segue destinationViewController];
+        [vc setImage1:sender];
+    }
+}
 #pragma mark - Image Picker Controller delegate methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *choseImage;
-    CamAndPhoto *camphoto = [[CamAndPhoto alloc] init];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad && !isCamera) {
         choseImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-        [self presentViewController:camphoto animated:YES completion:^{
-            camphoto.imageview.image = choseImage;
-        }];
+        [self.popOver dismissPopoverAnimated:YES];
+         [self performSegueWithIdentifier:@"CameraAlbum" sender:choseImage];
     }else{
         choseImage = info[UIImagePickerControllerOriginalImage];
         [picker dismissViewControllerAnimated:YES completion:^{
-            [self presentViewController:camphoto animated:YES completion:^{
-                camphoto.imageview.image = choseImage;
-            }];
+             [self performSegueWithIdentifier:@"CameraAlbum" sender:choseImage];
         }];
     }
 }
@@ -85,5 +88,6 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
+
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CamAndPhoto : UIViewController{
+#import <FacebookSDK/FacebookSDK.h>
+#import <QuartzCore/QuartzCore.h>
+@interface CamAndPhoto : UIViewController<UIActionSheetDelegate>{
     UIImage *image1;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
@@ -18,5 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIView *viewbutton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 - (IBAction)tollimage:(id)sender;
+- (IBAction)saveanh:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *saveanh;
+@property (weak, nonatomic) IBOutlet UIButton *back;
+@property (weak, nonatomic) IBOutlet UIButton *setting;
 
 @end

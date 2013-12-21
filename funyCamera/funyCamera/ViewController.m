@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "CamAndPhoto.h"
-
 @interface ViewController (){
     BOOL isCamera;
 }
@@ -32,8 +31,8 @@
     isCamera = true;
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
+    picker.wantsFullScreenLayout = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
     [self presentViewController:picker animated:YES completion:NULL];
 }
 - (IBAction)CameraFBack:(id)sender {
@@ -56,7 +55,7 @@
 }
 
 - (IBAction)info:(id)sender {
-
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -86,8 +85,20 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
+    [self prefersStatusBarHidden];
 }
+
+//fix not hide status on ios7
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+//end
 
 
 @end
